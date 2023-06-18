@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Random Reflection Questions</title>
-  <link rel="shortcut icon" type="image/x-icon" href="WonderSpark/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 
   <style>
     body {
@@ -35,6 +35,11 @@
       background-color: #ffa500;
     }
   </style>
+</head>
+<body>
+  <h1>Random Reflection Questions</h1>
+  <button onclick="generateRandomQuestion()">Generate Question</button>
+  <p id="question"></p>
   <script>
     function generateRandomQuestion() {
       var questions = [
@@ -56,10 +61,5 @@
       document.getElementById("question").textContent = randomQuestion;
     }
   </script>
-</head>
-<body>
-  <h1>Random Reflection Questions</h1>
-  <button onclick="generateRandomQuestion()">Generate Question</button>
-  <p id="question"></p>
 </body>
 </html>

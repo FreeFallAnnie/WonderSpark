@@ -1,15 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <title>Random Reflection Questions</title>
-  <link rel="stylesheet" href="WonderSpark.css">
+  <style>
+    body {
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      color: #333333;
+    }
+
+    #question {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333333;
+    }
+
+    button {
+      background-color: #ffcc00;
+      border: none;
+      color: #ffffff;
+      font-size: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ffa500;
+    }
+  </style>
+  <script>
+    function generateRandomQuestion() {
+      var questions = [
+        "How do you approach problem-solving and decision-making?",
+        "What activities or hobbies energize you the most?",
+        "How do you handle unexpected changes or disruptions to your plans?",
+        "How do you like to express your creativity?",
+        "What are some ways you connect with others on a deeper level?",
+        "What are your greatest strengths and how do they impact your life?",
+        "How do you navigate conflicts or disagreements?",
+        "What role does personal growth and self-improvement play in your life?",
+        "What inspires and motivates you?",
+        "How do you find balance between your alone time and social interactions?"
+      ];
+
+      var randomIndex = Math.floor(Math.random() * questions.length);
+      var randomQuestion = questions[randomIndex];
+
+      document.getElementById("question").textContent = randomQuestion;
+    }
+  </script>
 </head>
 <body>
   <h1>Random Reflection Questions</h1>
-  <button id="generate-btn">Generate Question</button>
+  <button onclick="generateRandomQuestion()">Generate Question</button>
   <p id="question"></p>
-
-  <script src="Script.js"></script>
 </body>
 </html>

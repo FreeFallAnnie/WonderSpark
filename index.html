@@ -12,15 +12,19 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            background-color:  #ffee8b;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
         }
 
         .banner {
             background-color: #db7f34;
             color: #fff;
             text-align: center;
-            padding: 20px;
-            font-size: 30px;
-            font-family: system-ui;
+            padding: 10px;
+            font-size: 50px;
+            font-family: Marker Felt, fantasy;
         }
 
         .tile-container {
@@ -36,7 +40,6 @@
             width: 200px;
             height: 200px;
             background-color: #dba634;
-            border: 1px solid #2980b9;
             margin: 20px;
             text-align: center;
             padding: 20px;
@@ -76,7 +79,7 @@
 
         /* Navigation bar at the bottom */
         .navbar {
-            background-color: #222;
+            background-color:  #db7f34;
             color: #fff;
             padding: 10px 0;
             text-align: center;
@@ -113,33 +116,36 @@
             display: block;
         }
 
-        /* Added CSS for selected tiles at the bottom */
         .selected-tiles {
-            display: none;
-            flex-wrap: wrap;
+            display: flex; /* Change from "block" to "flex" to stack tiles vertically */
+            flex-direction: column; /* Stack tiles vertically */
             justify-content: center; /* Center the selected tiles horizontally */
+            align-items: center; /* Center the selected tiles vertically */
             padding: 20px;
-            margin: 0; /* Remove margin */
             list-style-type: none; /* Remove bullet points */
+            text-align: center; /* Center text within tiles */
+            margin: 0 auto; /* Center the container horizontally */
+            max-width: 100%; /* Ensure the container doesn't exceed the page width */
         }
 
         .selected-tile {
             font-size: 16px;
-            text-align: center; /* Center text horizontally */
+            width: 200px;
+            text-align: center;
             border: none; /* Remove border */
-            background-color: transparent; /* Remove background */
+            background-color: #fefefe;
             padding: 10px; /* Add some padding for spacing */
             margin: 5px;
             cursor: pointer;
-            font-family: lato,sans-serif;
-            font-weight: bold;
+            font-family: lato, sans-serif;
             font-size: 1em;
             letter-spacing: 0.1em;
             text-decoration: none;
             color: #0e0e0e;
             padding: 10px 40px 10px 40px;
             position: relative;
-          }
+        }
+
     </style>
 </head>
 <body>
@@ -150,7 +156,7 @@
     <div class="tile-container">
         <div class="tile">
             <div class="tile-title">The Long Straw</div>
-            <div class="tile-description">Being Thankful for the privileges you've been afforded.</div>
+            <div class="tile-description">Being thankful for the privileges you've been afforded.</div>
         </div>
         <div class="tile">
             <div class="tile-title">Invisible Strings</div>
@@ -169,12 +175,11 @@
             <div class="tile-description">Paying attention to scenes within movies.</div>
         </div>
     </div>
-
     <!-- Navigation bar at the bottom -->
     <div class="navbar">
-        <div class="navbar-title">Spark Wonder</div>
-        <button class="nav-button" id="print-button">Print</button>
-      </div>
+      <div class="navbar-title">Spark Wonder</div>
+      <button class="nav-button" id="print-button">Print</button>
+    </div>
 
     <!-- Selected tiles at the bottom -->
     <ul id="selectedTiles" class="selected-tiles"></ul>
